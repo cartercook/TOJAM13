@@ -6,8 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class AnimateDialogue : MonoBehaviour
 {
-    public string[] lines;
-
     public AudioClip[] soundClips;
 
     private int lineNum = 0;
@@ -20,14 +18,29 @@ public class AnimateDialogue : MonoBehaviour
 
     private Coroutine coroutine;
 
+    private Transform rootTransform;
+
+    private CharacterDialogueData dialogue;
+
+    private string[] lines
+    {
+        get { return dialogue.lines[dialogue.index].array; }
+    }
+
     void Start()
     {
         text = GetComponent<Text>();
         audio = GetComponent<AudioSource>();
+        rootTransform = GetComponentInParent<TextboxRoot>().transform;
     }
 
-    public void Run()
+    public void Run(Vector2 position, CharacterDialogueData dialogue)
     {
+        rootTransform.position = position;
+        this.dialogue = dialogue;
+
+        gameObject.SetActive(true);
+
         coroutine = StartCoroutine(printChar());
     }
 
@@ -39,6 +52,8 @@ public class AnimateDialogue : MonoBehaviour
     /// A coroutine that animates text in a textbox
     private IEnumerator printChar()
     {
+        lineNum = 0;
+
         yield return setTextAndWait();
 
         while (true)
@@ -65,7 +80,7 @@ public class AnimateDialogue : MonoBehaviour
             yield return setTextAndWait();
         }
 
-        lineNum = 0;
+        gameObject.SetActive(false);
     }
 
     /// Updates the text component and waits for a fraction of a second

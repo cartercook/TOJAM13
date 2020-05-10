@@ -119,13 +119,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 3165377048641907901}
+        m_TargetAssemblyTypeName: PlayDialogue, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -141,6 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6117288957313202058}
   - component: {fileID: 6117288957313202057}
+  - component: {fileID: 3165377048641907901}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -181,6 +182,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29999b90621c844d9a9f5e33d497bcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3165377048641907901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117288957313202059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b187d7c0b180d40119c26f007f5016ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  data: {fileID: 11400000, guid: 11fbe913189d646f586ada88414b01a6, type: 2}
 --- !u!1001 &228803404842385659
 PrefabInstance:
   m_ObjectHideFlags: 0
