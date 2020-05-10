@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class FrameAnimator : MonoBehaviour
 {
-    public int frameNumber;
+    public int frameNumber = 78;
 
     [SerializeField]
     private Texture2D texture;
@@ -14,16 +15,14 @@ public class FrameAnimator : MonoBehaviour
 
     private RectTransform roomTranform;
 
+    private Animator animator;
+
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>($"Spritesheets/{texture.name}");
-        print(texture.name);
-        print(sprites);
-        print(sprites[0]);
 
         roomTranform = GetComponentInParent<Room>().GetComponent<RectTransform>();
-
         if (!roomTranform)
         {
             Debug.LogError("FrameAnimator must be decendant of a Room");
@@ -32,8 +31,7 @@ public class FrameAnimator : MonoBehaviour
 
     void Update()
     {
-        print(sprites);
-        print(sprites.Length);
+        /// animator controls this value
         renderer.sprite = sprites[frameNumber];
     }
 }
