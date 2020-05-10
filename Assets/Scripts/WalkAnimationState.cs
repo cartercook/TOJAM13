@@ -7,9 +7,11 @@ public class WalkAnimationState : MonoBehaviour
 {
     public float distance = 16;
 
-    public int startFrame;
+    public int leftStartFrame;
+    public int leftEndFrame;
 
-    public int endFrame;
+    public int rightStartFrame;
+    public int rightEndFrame;
 
     public float time = 1;
 
@@ -32,27 +34,27 @@ public class WalkAnimationState : MonoBehaviour
 
     void OnEnable()
     {
-        StartCoroutine(playFrames());
-
-        print($"{rectTransform.offsetMin.x}, {rectTransform.sizeDelta.x}");
+        // print($"{rectTransform.gameObject.name}: {rectTransform.localPosition.x}, {rectTransform.rect.xMin}, {rectTransform.sizeDelta.x}");
+        float x = characterTransform.localPosition.x;
+        float targetX = rectTransform.rect.xMin + rectTransform.sizeDelta.x * Random.value;
 
         TweenFactory.Tween(
             null,
-            characterTransform.position.x,
-            rectTransform.offsetMin.x + rectTransform.sizeDelta.x * Random.value,
+            x,
+            targetX,
             1,
             TweenScaleFunctions.QuadraticEaseInOut,
             (ITween<float> t) =>
             {
-                Vector3 pos = characterTransform.position;
+                Vector3 pos = characterTransform.localPosition;
                 pos.x = t.CurrentValue;
-                characterTransform.position = pos;
+                characterTransform.localPosition = pos;
             },
-            (t) =>
-            {
-                enabled = false;
-                nextState.enabled = true;
-            });
+            (t) => goToNextState());
+
+        StartCoroutine(targetX < x
+            ? playFrames(leftStartFrame, leftEndFrame)
+            : playFrames(rightStartFrame, rightEndFrame));
     }
 
     private void goToNextState()
@@ -61,26 +63,26 @@ public class WalkAnimationState : MonoBehaviour
         nextState.enabled = true;
     }
 
-    private IEnumerator playFrames()
+    private IEnumerator playFrames(int startFrame, int endFrame)
     {
         elapsed = 0;
 
-        updateFrame();
+        updateFrame(startFrame, endFrame);
 
         while (elapsed < time)
         {
             yield return null;
-            updateFrame();
+            updateFrame(startFrame, endFrame);
         }
 
         enabled = false;
         nextState.enabled = true;
     }
 
-    private void updateFrame()
+    private void updateFrame(int startFrame, int endFrame)
     {
         int frameIndex = Mathf.Min(
-            startFrame + Mathf.FloorToInt(((endFrame + 1) - startFrame) * (elapsed / time)),
+            startFrame + Mathf.FloorToInt(((endFrame + 1) - leftStartFrame) * (elapsed / time)),
             endFrame);
 
         frameAnimator.frameNumber = frameIndex;

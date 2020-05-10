@@ -24,8 +24,6 @@ public class AnimateDialogue : MonoBehaviour
     {
         text = GetComponent<Text>();
         audio = GetComponent<AudioSource>();
-
-        Run();
     }
 
     public void Run()
