@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: c11e876db0c984771ae0027ce76475ff, type: 2}
     - target: {fileID: 6117288956357741788, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: texture
       value: 
@@ -533,6 +537,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: d5df627b7a19c4251ac4507c95c9a684, type: 2}
     - target: {fileID: 3916555357145699126, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -749,7 +757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 458}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484836304
@@ -951,6 +959,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 512971bdf6e9f4686a458265aa8ae5fd, type: 2}
     - target: {fileID: 6117288956357741788, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: texture
       value: 
@@ -1085,6 +1097,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c5a053671ee34278b7cbd472863aa5b, type: 2}
     - target: {fileID: 3916555357145699126, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1344,6 +1360,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 79acfe2a05d4e4fc69b3b226c678f85c, type: 2}
     - target: {fileID: 6117288956357741788, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: texture
       value: 
@@ -1729,7 +1749,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: fffa2a6f3a6f6e04f8f1a4ed8ab18696, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1835,22 +1855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundClips:
-  - {fileID: 8300000, guid: c6f25bcfe87724e8c95be94d6eeb6451, type: 3}
-  - {fileID: 8300000, guid: da46002dcb50649e884289bc86d344b3, type: 3}
-  - {fileID: 8300000, guid: 81a1d04068d4e4c01904a445e5bd5a83, type: 3}
-  - {fileID: 8300000, guid: bf4e0761e70904aaa92c447abbdee32b, type: 3}
-  - {fileID: 8300000, guid: 73ce6111b6d6f41d69189ec59eac2091, type: 3}
-  - {fileID: 8300000, guid: 54de8dc42512c46ae8a189f8de16e5e0, type: 3}
-  - {fileID: 8300000, guid: 0d6b3861199944837b2b2e39c71aa88b, type: 3}
-  - {fileID: 8300000, guid: 5e091fb73510c4c369903a816ba6b883, type: 3}
-  - {fileID: 8300000, guid: a32ca196b1b054c519e1e5f56df8209d, type: 3}
-  - {fileID: 8300000, guid: ee316c6d8706f4baf934dd53b14c5343, type: 3}
-  - {fileID: 8300000, guid: a59f3c2d97ea34c01a4aaf8858256f93, type: 3}
-  - {fileID: 8300000, guid: b16d11e23f0c7439eaa30b33e7c42bce, type: 3}
-  - {fileID: 8300000, guid: dca517b6b0a7d4071b80f2782eb489b9, type: 3}
-  - {fileID: 8300000, guid: 5f21d89125cbc4369b5184357dbacad1, type: 3}
-  - {fileID: 8300000, guid: 95e3bc038367f4a109eb959f7fac6698, type: 3}
-  - {fileID: 8300000, guid: 86b3a30a06ed540669a58743e33339a4, type: 3}
+  - {fileID: 8300000, guid: 2dc0684b65bb448bd92cf3d432668c49, type: 3}
 --- !u!82 &1485582471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2022,7 +2027,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 96da0565cc85fdf49b5e0a49cfa8766d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2045,6 +2050,14 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238024315380158781, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6117288956357741788, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: texture
       value: 
@@ -2352,6 +2365,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cf70ec10f704466aad0475717b7a736, type: 2}
     - target: {fileID: 3916555357145699126, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2805,6 +2822,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1485582470}
+    - target: {fileID: 3165377048641907901, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 6562307320209420abb8f2a936935150, type: 2}
     - target: {fileID: 6117288956357741788, guid: fc98c064cfb5948f4a8da0baf65f9f70, type: 3}
       propertyPath: texture
       value: 

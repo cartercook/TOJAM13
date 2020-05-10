@@ -18,7 +18,6 @@ public class PlayDialogue : MonoBehaviour
     public void Play()
     {
         Vector2 pos = rectTransform.position;
-        pos.y += rectTransform.rect.yMin;
 
         dialogue.Run(pos, data);
     }

@@ -18,7 +18,9 @@ public class AnimateDialogue : MonoBehaviour
 
     private Coroutine coroutine;
 
-    private Transform rootTransform;
+    private bool isCoroutineRunning = false;
+
+    private GameObject root;
 
     private CharacterDialogueData dialogue;
 
@@ -31,15 +33,21 @@ public class AnimateDialogue : MonoBehaviour
     {
         text = GetComponent<Text>();
         audio = GetComponent<AudioSource>();
-        rootTransform = GetComponentInParent<TextboxRoot>().transform;
+        root = GetComponentInParent<TextboxRoot>().gameObject;
     }
 
     public void Run(Vector2 position, CharacterDialogueData dialogue)
     {
-        rootTransform.position = position;
+        if (isCoroutineRunning)
+        {
+            return;
+        }
+
+        root.transform.position = position;
         this.dialogue = dialogue;
 
-        gameObject.SetActive(true);
+        root.SetActive(true);
+
 
         coroutine = StartCoroutine(printChar());
     }
@@ -52,6 +60,7 @@ public class AnimateDialogue : MonoBehaviour
     /// A coroutine that animates text in a textbox
     private IEnumerator printChar()
     {
+        isCoroutineRunning = true;
         lineNum = 0;
 
         yield return setTextAndWait();
@@ -65,22 +74,23 @@ public class AnimateDialogue : MonoBehaviour
                 lineNum++;
                 charNum = 0;
 
-                if (lineNum >= lines.Length)
-                {
-                    break;
-                }
-
                 // idle until mousedown
                 while (!Input.GetMouseButtonDown(0))
                 {
                     yield return null;
+                }
+
+                if (lineNum >= lines.Length)
+                {
+                    break;
                 }
             }
 
             yield return setTextAndWait();
         }
 
-        gameObject.SetActive(false);
+        root.SetActive(false);
+        isCoroutineRunning = false;
     }
 
     /// Updates the text component and waits for a fraction of a second
