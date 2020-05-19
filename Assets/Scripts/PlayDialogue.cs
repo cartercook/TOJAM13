@@ -17,6 +17,11 @@ public class PlayDialogue : MonoBehaviour
 
     public void Play()
     {
+        if (!data)
+        {
+            return;
+        }
+
         Vector2 pos = rectTransform.position;
 
         dialogue.Run(pos, data);
